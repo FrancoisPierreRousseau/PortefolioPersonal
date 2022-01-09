@@ -1,0 +1,34 @@
+languageCode: "fr"
+title: "Portafolio"
+baseUrl: "portafolio.fr"
+enableInlineShortcodes: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    highlight:
+      noClasses: false
+    tableOfContents:
+      startLevel: 2
+      endLevel: 6
+
+metaDataFormat: "yaml"
+disableKinds: [ "404", "taxonomy", "term", "RSS" ]
+
+publishDir: "_site"
+
+module:
+  mounts:
+    - source: dist
+      target: static/docs/1.1/dist
+    - source: site/assets
+      target: assets
+    - source: site/content
+      target: content
+    - source: site/data
+      target: data
+    - source: site/layouts
+      target: layouts
+    - source: site/static
+      target: static
